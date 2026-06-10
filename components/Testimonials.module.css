@@ -1,0 +1,133 @@
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .section-subtitle {
+  text-align: center;
+}
+
+.carouselWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonialContainer {
+  width: 100%;
+  margin-bottom: 32px;
+  min-height: 280px;
+  display: flex;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.iconQuote {
+  margin-bottom: 24px;
+  opacity: 0.15;
+  display: inline-flex;
+}
+
+.quoteText {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.clientMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+
+.clientRole {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.company {
+  font-weight: 600;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ctrlBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ctrlBtn:hover {
+  background: var(--indigo-primary);
+  border-color: var(--indigo-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gray-200);
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.activeIndicator {
+  background: var(--indigo-primary);
+  width: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 32px 24px;
+  }
+  .quoteText {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}

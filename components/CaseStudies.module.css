@@ -1,0 +1,318 @@
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.caseCard {
+  background: linear-gradient(135deg, #1A52B8 0%, #0C3483 100%); /* Softened royal to navy blue gradient */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.caseCard:hover {
+  border-color: var(--white);
+  box-shadow: 0 20px 45px -15px rgba(12, 52, 131, 0.45);
+  transform: translateY(-8px);
+}
+
+.caseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.caseIcon {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.12); /* Translucent icon wrap */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.caseCard:hover .caseIcon {
+  background: var(--white);
+  color: var(--color, #1A73E8);
+  transform: scale(1.06);
+}
+
+.caseTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white); /* White text for contrast */
+  margin-bottom: 12px;
+}
+
+.caseDesc {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.85); /* Light gray for copy readability */
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.08); /* Translucent result badge */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.caseCard.withImage {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.caseCard.withImage:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+  transform: translateY(-8px);
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  overflow: hidden;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardBody {
+  position: absolute;
+  top: 260px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f8fafc;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a73e8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.caseCard.withImage .caseTitle {
+  color: #1d2026;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.slidingContainer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.caseCard.withImage .caseDesc {
+  color: #4a5260;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 0;
+}
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a73e8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: gap 0.2s ease;
+}
+
+.learnMore:hover {
+  gap: 10px;
+}
+
+/* Hover Actions */
+.caseCard.withImage:hover .imageContainer {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+
+.caseCard.withImage:hover .cardBody {
+  top: 0;
+}
+
+.caseCard.withImage:hover .slidingContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.footerCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerCta p {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .casesGrid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Specific themed result styling for image-based cards on light background */
+.caseCard.withImage .result {
+  background: rgba(26, 115, 232, 0.08);
+  border-color: rgba(26, 115, 232, 0.15);
+  color: #1a73e8;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .caseCard.withImage {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .caseCard.withImage:hover {
+    transform: translateY(-4px); /* Smaller lift on mobile */
+  }
+
+  .caseCard.withImage .imageContainer {
+    position: relative;
+    height: 200px;
+    border-radius: 19px 19px 0 0;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .caseCard.withImage .cardBody {
+    position: relative;
+    top: 0 !important;
+    padding: 24px;
+    height: auto;
+    background: #f8fafc;
+  }
+
+  .caseCard.withImage .slidingContainer {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .caseCard.withImage .caseDesc {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .casesGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 24px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  
+  .casesGrid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .caseCard.withImage {
+    flex-shrink: 0;
+    width: 290px;
+    min-width: 290px;
+    scroll-snap-align: center;
+  }
+  
+  .caseCard.withImage .imageContainer {
+    height: 160px;
+  }
+  
+  .caseCard.withImage .cardBody {
+    padding: 16px;
+  }
+  
+  .caseCard.withImage .caseTitle {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  .caseCard.withImage .caseDesc {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .casesGrid {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

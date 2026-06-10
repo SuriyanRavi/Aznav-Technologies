@@ -1,0 +1,221 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(10, 17, 31, 0.78), rgba(10, 17, 31, 0.88)), url('/human_centered_hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Gradient Orbs */
+.orb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(15, 95, 220, 0.12) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  border-radius: 50%;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  bottom: -100px;
+  left: 10%;
+  border-radius: 50%;
+  z-index: 1;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Center Column */
+.heroCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 680px;
+  gap: 0;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 95, 220, 0.08);
+  border: 1px solid rgba(15, 95, 220, 0.2);
+  color: var(--blue-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--blue-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--blue-accent);
+}
+
+.heroTitle {
+  font-size: clamp(30px, 6vw, 56px);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+
+.heroHighlight {
+  color: var(--blue-primary);
+}
+
+.heroDesc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Brand Marquee */
+.brandMarquee {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 24px;
+  padding-bottom: 60px; /* Space for scroll down button */
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.marqueeTitle {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.marqueeDot {
+  width: 5px;
+  height: 5px;
+  background: var(--blue-accent);
+  border-radius: 50%;
+}
+
+/* Scroll Down */
+.scrollDown {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scrollDown:hover {
+  background: var(--blue-primary);
+  color: white;
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 15px rgba(15, 95, 220, 0.4);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 90px;
+  }
+  .content {
+    padding: 30px 20px;
+  }
+}

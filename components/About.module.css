@@ -1,0 +1,144 @@
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0A1628;
+}
+
+.check {
+  color: var(--blue-primary);
+  flex-shrink: 0;
+}
+
+/* Right */
+.aboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.whoWeAre {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px rgba(15, 95, 220, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.whoWeAre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-accent));
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0A1628;
+  margin-bottom: 12px;
+}
+
+.whoWeAre p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* Pillars */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.pillar:hover {
+  border-color: var(--blue-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.pillarIcon {
+  width: 48px;
+  height: 48px;
+  background: var(--blue-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.pillar:hover .pillarIcon {
+  background: var(--blue-primary);
+  color: white;
+}
+
+.pillarTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A1628;
+  margin-bottom: 6px;
+}
+
+.pillarText {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillar {
+    padding: 16px;
+    gap: 12px;
+  }
+}

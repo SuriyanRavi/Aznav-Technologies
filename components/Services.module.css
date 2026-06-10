@@ -1,0 +1,202 @@
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .section-subtitle {
+  text-align: center;
+}
+
+/* Grid Wrapper */
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1060px; /* Narrowed width */
+  margin: 0 auto 56px; /* Centered */
+}
+
+/* Individual Card */
+.card {
+  background: linear-gradient(135deg, #1A52B8 0%, #0C3483 100%); /* Softened royal to navy blue gradient */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5;
+  position: relative;
+  transform-style: preserve-3d; /* Enable 3D layers */
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--white);
+  box-shadow: 0 20px 45px -15px rgba(12, 52, 131, 0.45);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+  transform: translateZ(35px); /* 3D Depth Layer */
+}
+
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover .cardIcon {
+  background: var(--white);
+  color: var(--blue-primary);
+  transform: scale(1.06) translateZ(10px);
+}
+
+
+
+.cardTitle {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--white); /* White title text */
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+  transform: translateZ(30px); /* 3D Depth Layer */
+  transition: opacity 0.3s ease;
+}
+
+.cardText {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.85); /* Highly readable description text on blue background */
+  line-height: 1.6;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+  transform: translateZ(20px); /* 3D Depth Layer */
+  flex-grow: 1;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 18px;
+  transform: translateZ(25px); /* 3D Depth Layer */
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.1); /* Translucent tag chips */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  font-size: 11.5px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+
+.cardFooter {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Translucent divider */
+  padding-top: 16px;
+  transform: translateZ(30px); /* 3D Depth Layer */
+}
+
+.cardLink {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowIcon {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cardLink:hover {
+  opacity: 0.85;
+}
+
+.cardLink:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 36px 48px;
+  background: linear-gradient(135deg, var(--blue-light) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.cta p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gridWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 720px; /* Narrowed on tablet */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .gridWrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .card {
+    padding: 32px 24px;
+    min-height: 400px;
+  }
+  .cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+    gap: 18px;
+  }
+}
