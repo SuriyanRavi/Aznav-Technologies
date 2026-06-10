@@ -213,9 +213,44 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding-top: 90px;
+    padding-top: 80px;
   }
   .content {
-    padding: 30px 20px;
+    padding: 24px 20px;
+    align-items: flex-start;
+  }
+  .heroCenter {
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 12px;
+  }
+  .content {
+    padding: 16px;
+  }
+  .heroTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .heroDesc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .heroButtons {
+    gap: 12px;
+  }
+  .btnSecondary {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .brandMarquee {
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-bottom: 40px;
   }
 }

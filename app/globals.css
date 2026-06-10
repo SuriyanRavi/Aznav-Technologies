@@ -329,6 +329,10 @@ code, pre, .mono, .badge-tech {
 @media (max-width: 480px) {
   .section, .section-dark, .section-alt { padding: 50px 0; }
   .container { padding: 0 16px; }
+  .btn-primary, .btn-outline, .btn-outline-white {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
 }
 
 /* Animations */
