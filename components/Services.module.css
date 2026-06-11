@@ -27,8 +27,8 @@
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 380px;
+  justify-content: flex-start;
+  min-height: 240px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 5;
   position: relative;
@@ -191,7 +191,6 @@
   }
   .card {
     padding: 32px 24px;
-    min-height: 400px;
   }
   .cta {
     flex-direction: column;

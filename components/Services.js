@@ -61,7 +61,7 @@ const servicesData = [
   },
 ];
 
-function ServiceCard({ service, scrollToContact }) {
+function ServiceCard({ service }) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -115,21 +115,6 @@ function ServiceCard({ service, scrollToContact }) {
 
       <h3 className={styles.cardTitle}>{service.title}</h3>
       <p className={styles.cardText}>{service.desc}</p>
-
-      {/* Tech tags */}
-      <div className={styles.cardBody}>
-        <div className={styles.techTags}>
-          {service.techs.map(t => (
-            <span key={t} className={styles.techTag}>{t}</span>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.cardFooter}>
-        <button className={styles.cardLink} onClick={scrollToContact}>
-          Discuss Requirements <ArrowRight size={14} className={styles.arrowIcon} />
-        </button>
-      </div>
     </motion.div>
   );
 }
@@ -167,7 +152,6 @@ export default function Services() {
             <ServiceCard 
               key={service.title}
               service={service}
-              scrollToContact={scrollToContact}
             />
           ))}
         </div>

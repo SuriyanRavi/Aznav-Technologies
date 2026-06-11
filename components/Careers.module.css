@@ -44,21 +44,7 @@
   flex: 1;
 }
 
-.roleTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 4px;
-}
 
-.tag {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #64748B; /* Visible slate grey */
-  background: none;
-  font-family: var(--font-mono);
-  padding: 0;
-}
 
 .applyBtn {
   display: inline-flex;

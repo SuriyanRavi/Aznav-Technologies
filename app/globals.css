@@ -127,14 +127,12 @@ code, pre, .mono, .badge-tech {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--blue-light);
   color: var(--blue-primary);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 100px;
+  padding: 0;
   margin-bottom: 16px;
 }
 

@@ -21,7 +21,7 @@
 .testimonialContainer {
   width: 100%;
   margin-bottom: 32px;
-  min-height: 280px;
+  min-height: 180px;
   display: flex;
   align-items: stretch;
 }
@@ -50,7 +50,7 @@
   font-weight: 500;
   color: var(--text-primary);
   line-height: 1.8;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   font-style: italic;
 }
 

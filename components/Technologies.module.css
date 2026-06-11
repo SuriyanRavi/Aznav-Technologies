@@ -44,32 +44,10 @@
   border-bottom: 2px solid rgba(var(--accent-rgb), 0.08); /* Uses dynamic accent color variable */
 }
 
-.techTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 6px 14px;
-  background: white; /* Clean white tag stands out on the card's subtle gradient */
-  color: #0A1628;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: var(--font-mono);
-  border-radius: 100px;
-  border: 1px solid rgba(var(--accent-rgb), 0.1);
-  cursor: default;
-  transition: all 0.25s ease;
-  user-select: none;
-}
-
-.tag:hover {
-  background: var(--accent); /* Uses dynamic accent color variable */
-  color: white;
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.25);
+.catDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 1024px) {

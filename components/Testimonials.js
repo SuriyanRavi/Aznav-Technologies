@@ -96,11 +96,6 @@ export default function Testimonials() {
 
                 <p className={styles.quoteText}>&ldquo;{current.quote}&rdquo;</p>
 
-                <div className={styles.clientMeta}>
-                  <p className={styles.clientRole}>
-                    — {current.role} · <span className={styles.company}>{current.company}</span>
-                  </p>
-                </div>
               </motion.div>
             </AnimatePresence>
           </div>

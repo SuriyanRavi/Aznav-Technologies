@@ -7,17 +7,14 @@ const roles = [
   {
     title: 'Software Developer',
     desc: 'Join our innovative development team and build scalable software solutions that make a real impact.',
-    tags: ['React', 'Node.js', 'Python'],
   },
   {
     title: 'AI Engineer',
     desc: 'Build intelligent AI-powered systems. Work on cutting-edge machine learning and NLP projects.',
-    tags: ['Python', 'TensorFlow', 'LLMs'],
   },
   {
     title: 'Cloud Engineer',
     desc: 'Design and manage cloud infrastructure that powers modern, scalable digital products.',
-    tags: ['AWS', 'Kubernetes', 'Docker'],
   },
 ];
 
@@ -60,11 +57,7 @@ export default function Careers() {
             >
               <h3 className={styles.roleTitle}>{role.title}</h3>
               <p className={styles.roleDesc}>{role.desc}</p>
-              <div className={styles.roleTags}>
-                {role.tags.map(tag => (
-                  <span key={tag} className={styles.tag}>{tag}</span>
-                ))}
-              </div>
+
               <button className={styles.applyBtn} onClick={scrollToContact}>
                 Apply Now <ArrowRight size={15} />
               </button>
